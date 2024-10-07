@@ -9,7 +9,7 @@ internal class Vezbe1
         //zadatak2();
         //zadatak3();
         //zadatak4();
-        zadatak5();
+        //zadatak5();
 
     }
     private static void zadatak1()
@@ -65,7 +65,7 @@ internal class Vezbe1
         Console.WriteLine("Unesite substring: ");
         var podstring = Console.ReadLine();
 
-
+        int brojacPogodaka = 0;
         for (int i = 0; i <= tekst.Length - podstring.Length; i++)
         {
             for (int j = podstring.Length; j > 0; j--)
@@ -73,12 +73,14 @@ internal class Vezbe1
                 if (tekst.Substring(i, j).Equals(podstring))
                 {
                     Console.WriteLine("Postoji substring i on se nalazi izmedju sledecih indexa: " + i + " i " + (i + j - 1));
-                    return;
+                    brojacPogodaka += 1;
                 }
             }
         }
-
-        Console.WriteLine("Substring nije pronadjen.");
+        if (brojacPogodaka == 0)
+        {
+            Console.WriteLine("Substring nije pronadjen.");
+        }
     }
 
     private static void zadatak4()

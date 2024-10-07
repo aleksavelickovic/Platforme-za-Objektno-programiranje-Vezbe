@@ -18,12 +18,12 @@ internal class Program
         do
         {
             Console.WriteLine("Molimo Vas unesite broj: ");
-            String input = Console.ReadLine();
+            var input = Console.ReadLine();
             if (input != null)
             {
                 try
                 {
-                    int inputReader = Int32.Parse(input);
+                    int inputReader = int.Parse(input);
                     isNumberValid = true;
                 }
                 catch (FormatException)
@@ -42,9 +42,9 @@ internal class Program
     private static void zadatak2()
     {
         Console.WriteLine("Unesite broj");
-        int inputReader = Int32.Parse(Console.ReadLine());
+        var input = Console.ReadLine();
         int fact = 1;
-        for (int i = 1; i <= inputReader; i++)
+        for (int i = 1; i <= int.Parse(input); i++)
         {
             fact = fact * i;
             Console.WriteLine(i);
@@ -55,7 +55,7 @@ internal class Program
     private static void zadatak3()
     {
         Console.WriteLine("Unesite tekst: ");
-        String tekst = Console.ReadLine();
+        var tekst = Console.ReadLine();
         if (tekst == null)
         {
             Console.WriteLine("Greska: Unet tekst je null.");
@@ -63,7 +63,7 @@ internal class Program
         }
 
         Console.WriteLine("Unesite substring: ");
-        String podstring = Console.ReadLine();
+        var podstring = Console.ReadLine();
 
 
         for (int i = 0; i <= tekst.Length - podstring.Length; i++)
@@ -112,7 +112,7 @@ internal class Program
     {
         Random random = new Random();
         Console.WriteLine("Unesite broj nasumicnih brojeva: ");
-        int unos = Int32.Parse(Console.ReadLine());
+        var unos = int.Parse(Console.ReadLine());
         List<int> nizNasumicnihBrojeva = new List<int>();
         for (int i = 0; i <= unos; i++)
         {
@@ -121,7 +121,7 @@ internal class Program
         nizNasumicnihBrojeva.Sort();
         Console.WriteLine(string.Join(",", nizNasumicnihBrojeva));
         Console.WriteLine("Unesite broj: ");
-        int broj = Int32.Parse(Console.ReadLine());
+        var broj = int.Parse(Console.ReadLine());
         int brojac = 0;
         foreach (int i in nizNasumicnihBrojeva)
         {

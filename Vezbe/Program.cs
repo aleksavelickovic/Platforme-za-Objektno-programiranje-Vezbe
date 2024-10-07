@@ -1,11 +1,15 @@
-﻿internal class Program
+﻿using System.Collections;
+using System.Collections.Generic;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
         //zadatak1():
         //zadatak2();
         //zadatak3();
-        zadatak4();
+        //zadatak4();
+        zadatak5();
 
     }
     private static void zadatak1()
@@ -101,6 +105,31 @@
                 }
             }
             Console.WriteLine("Rec nije palindrom, potrebno je zameniti " + brojac + " karaktera!");
+        }
+    }
+
+    private static void zadatak5()
+    {
+        Random random = new Random();
+        Console.WriteLine("Unesite broj nasumicnih brojeva: ");
+        int unos = Int32.Parse(Console.ReadLine());
+        List<int> nizNasumicnihBrojeva = new List<int>();
+        for (int i = 0; i <= unos; i++)
+        {
+            nizNasumicnihBrojeva.Add(random.Next(100));
+        }
+        nizNasumicnihBrojeva.Sort();
+        Console.WriteLine(string.Join(",", nizNasumicnihBrojeva));
+        Console.WriteLine("Unesite broj: ");
+        int broj = Int32.Parse(Console.ReadLine());
+        int brojac = 0;
+        foreach (int i in nizNasumicnihBrojeva)
+        {
+            if (i == broj)
+            {
+                Console.WriteLine("Broj se nalazi na indexu: " + brojac);
+            }
+            brojac += 1;
         }
     }
 

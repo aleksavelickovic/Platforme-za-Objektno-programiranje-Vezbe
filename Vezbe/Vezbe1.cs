@@ -5,14 +5,26 @@ internal class Vezbe1
 {
     public static void Main(string[] args)
     {
-        //zadatak1():
+        zadatak1();
+        //zadatak1a():
         //zadatak2();
         //zadatak3();
         //zadatak4();
         //zadatak5();
 
     }
+
     private static void zadatak1()
+    {
+        Console.WriteLine("Molimo Vas unesite broj: ");
+        int input = int.Parse(Console.ReadLine());
+        for (int i = 0; i <= 10; i++)
+        {
+            Console.WriteLine(i + " X " + input + " = " + i * input);
+        }
+    }
+
+    private static void zadatak1a()
     {
         bool isNumberValid = false;
         do

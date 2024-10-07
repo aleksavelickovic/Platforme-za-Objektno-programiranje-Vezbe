@@ -50,7 +50,7 @@
     private static void zadatak3()
     {
         Console.WriteLine("Unesite tekst: ");
-        String? tekst = Console.ReadLine();
+        String tekst = Console.ReadLine();
         if (tekst == null)
         {
             Console.WriteLine("Greska: Unet tekst je null.");
@@ -58,12 +58,8 @@
         }
 
         Console.WriteLine("Unesite substring: ");
-        String? podstring = Console.ReadLine();
-        if (podstring == null)
-        {
-            Console.WriteLine("Greska: Unet substring je null.");
-            return;
-        }
+        String podstring = Console.ReadLine();
+        
 
         for (int i = 0; i <= tekst.Length - podstring.Length; i++)
         {

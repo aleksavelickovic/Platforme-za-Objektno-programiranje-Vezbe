@@ -18,7 +18,7 @@ internal class Vezbe1
     {
         Console.WriteLine("Molimo Vas unesite broj: ");
         int input = int.Parse(Console.ReadLine());
-        for (int i = 0; i <= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
             Console.WriteLine(i + " X " + input + " = " + i * input);
         }

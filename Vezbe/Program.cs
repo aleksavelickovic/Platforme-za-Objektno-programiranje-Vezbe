@@ -51,7 +51,7 @@
         char[] array = tekst.ToCharArray();
         foreach (char karakter in array)
         {
-
+            Console.WriteLine();
         }
     }
 

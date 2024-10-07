@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-internal class Program
+internal class Vezbe1
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         //zadatak1():
         //zadatak2();

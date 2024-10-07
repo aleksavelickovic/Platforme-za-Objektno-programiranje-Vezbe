@@ -52,6 +52,7 @@
         foreach (char karakter in array)
         {
             Console.WriteLine(karakter);
+            Console.WriteLine(karakter);
         }
     }
 

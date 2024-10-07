@@ -4,7 +4,8 @@
     {
         //zadatak1():
         //zadatak2();
-        zadatak3();
+        //zadatak3();
+        zadatak4();
 
     }
     private static void zadatak1()
@@ -59,7 +60,7 @@
 
         Console.WriteLine("Unesite substring: ");
         String podstring = Console.ReadLine();
-        
+
 
         for (int i = 0; i <= tekst.Length - podstring.Length; i++)
         {
@@ -74,6 +75,33 @@
         }
 
         Console.WriteLine("Substring nije pronadjen.");
+    }
+
+    private static void zadatak4()
+    {
+        int brojac = 0;
+        Console.WriteLine("Unesite rec:");
+        String? rec = Console.ReadLine();
+        char[] charArray = rec.ToCharArray();
+        Array.Reverse(charArray);
+        Console.WriteLine(charArray);
+        if (rec.Equals(new String(charArray)))
+        {
+            Console.WriteLine("Rec je palindrom!");
+        }
+        else
+        {
+            for (int i = 0; i < rec.Length; i++)
+            {
+                //Console.WriteLine(rec[i]);
+                //Console.WriteLine(charArray[i]);
+                if (rec[i] != charArray[i])
+                {
+                    brojac += 1;
+                }
+            }
+            Console.WriteLine("Rec nije palindrom, potrebno je zameniti " + brojac + " karaktera!");
+        }
     }
 
 }

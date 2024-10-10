@@ -54,9 +54,9 @@ internal class Vezbe1
     private static void zadatak2()
     {
         Console.WriteLine("Unesite broj");
-        string input = Console.ReadLine();
+        int input = int.Parse(Console.ReadLine());
         int fact = 1;
-        for (int i = 1; i <= int.Parse(input); i++)
+        for (int i = 1; i <= input; i++)
         {
             fact = fact * i;
             Console.WriteLine(i);

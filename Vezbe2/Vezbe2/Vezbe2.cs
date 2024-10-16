@@ -34,21 +34,47 @@ namespace Vezbe
         {
             int levi = 0;
             int desni = lista.Count - 1;
-            if (lista[(levi + desni) / 2] == broj)
+
+            while (levi <= desni)
             {
-                return (levi + desni) / 2;
-            }
-            else
-            {
-                return BinarnaPretraga(lista, ((levi + 1) + (desni - 1)) / 2);
+                int srednji = (levi + desni) / 2;
+
+                if (lista[srednji] == broj)
+                {
+                    return srednji;
+                }
+                else if (lista[srednji] > broj)
+                {
+                    desni = srednji - 1;
+                }
+                else
+                {
+                    levi = srednji + 1;
+                }
             }
 
+            return -1;
+        }
+
+        public struct Korisnik
+        {
+            public string BrojKartice;
+            public string Pin;
+            public int Stanje;
+
+            public Korisnik(string BrojKartice, string Pin, int Stanje)
+            {
+                this.BrojKartice = BrojKartice;
+                this.Pin = Pin;
+                this.Stanje = Stanje;
+            }
         }
 
         public static void zadatak6()
         {
             /* S obzirom da materijal za 6ti zadatak nije radio, profesor je umesto njega zadao nadogradnju na Z5a,
             a to je da se rekurzijom pronadje najmanji broj deljiv sa 7 u sortiranom nizu brojeva */
+
             Random random = new Random();
             Console.WriteLine("Unesite broj nasumicnih brojeva: ");
             int unos = int.Parse(Console.ReadLine());
@@ -61,21 +87,17 @@ namespace Vezbe
             Console.WriteLine(string.Join(",", nizNasumicnihBrojeva));
             Console.WriteLine("Unesite broj: ");
             int broj = int.Parse(Console.ReadLine());
-            Console.WriteLine("Broj se nalazi na indexu: " + BinarnaPretraga(nizNasumicnihBrojeva, broj));
-            //int brojac = 0;
-            //foreach (int i in nizNasumicnihBrojeva)
-            //{
-            //    if (i == broj)
-            //    {
-            //        Console.WriteLine("Broj se nalazi na indexu: " + brojac);
-            //    }
-            //    brojac += 1;
-            //}
-            //brojac = 0;
+            if (BinarnaPretraga(nizNasumicnihBrojeva, broj) == -1)
+            {
+                Console.WriteLine("Broj ne postoji u ovom nizu.");
+            }
+            else
+            {
+                Console.WriteLine("Broj se nalazi na indexu: " + BinarnaPretraga(nizNasumicnihBrojeva, broj));
+            }
 
             // Ovo je resenje zadatka 6:
             Console.WriteLine("Najmanji broj deljiv sa 7 u ovom nizu je: " + getBrojNiza(nizNasumicnihBrojeva, 1));
-
         }
 
         public static void zadatak7()
@@ -155,26 +177,7 @@ namespace Vezbe
             {
                 Console.WriteLine("Pogresan PIN!");
             }
-
-
-
         }
-
-        public struct Korisnik
-        {
-            public string BrojKartice;
-            public string Pin;
-            public int Stanje;
-
-            public Korisnik(string BrojKartice, string Pin, int Stanje)
-            {
-                this.BrojKartice = BrojKartice;
-                this.Pin = Pin;
-                this.Stanje = Stanje;
-            }
-        }
-
-
 
         //public static void Serialize(Tree tree)
         //{

@@ -5,13 +5,37 @@ internal class Vezbe1
 {
     public static void Main(string[] args)
     {
-        zadatak1();
+        //zadatak1();
         //zadatak1a():
         //zadatak2();
         //zadatak3();
         //zadatak4();
-        //zadatak5();
+        zadatak5();
 
+    }
+    public static int BinarnaPretraga(List<int> lista, int broj)
+    {
+        int levi = 0;
+        int desni = lista.Count - 1;
+
+        while (levi <= desni)
+        {
+            int srednji = (levi + desni) / 2;
+
+            if (lista[srednji] == broj)
+            {
+                return srednji;
+            }
+            else if (lista[srednji] > broj)
+            {
+                desni = srednji - 1;
+            }
+            else
+            {
+                levi = srednji + 1;
+            }
+        }
+        return -1;
     }
 
     private static void zadatak1()
@@ -136,14 +160,13 @@ internal class Vezbe1
         Console.WriteLine(string.Join(",", nizNasumicnihBrojeva));
         Console.WriteLine("Unesite broj: ");
         int broj = int.Parse(Console.ReadLine());
-        int brojac = 0;
-        foreach (int i in nizNasumicnihBrojeva)
+        if (BinarnaPretraga(nizNasumicnihBrojeva, broj) == -1)
         {
-            if (i == broj)
-            {
-                Console.WriteLine("Broj se nalazi na indexu: " + brojac);
-            }
-            brojac += 1;
+            Console.WriteLine("Broj ne postoji u ovom nizu.");
+        }
+        else
+        {
+            Console.WriteLine("Broj se nalazi na indexu: " + BinarnaPretraga(nizNasumicnihBrojeva, broj));
         }
     }
 

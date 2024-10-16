@@ -20,7 +20,7 @@ namespace Vezbe
 
         public static int getBrojNiza(List<int> lista, int index)
         {
-            if (lista[index] % 7 == 0)
+            if (lista[index] % 7 == 0 && lista[index] != 0)
             {
                 return lista[index];
             }

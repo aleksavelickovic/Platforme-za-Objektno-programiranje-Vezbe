@@ -1,0 +1,20 @@
+void Serialize(Tree tree)
+{
+    BinaryFormatter b = new BinaryFormatter();
+    var fileStream = File.Create("path");
+    b.Serialize(fileStream, tree);
+    fileStream.Close();
+}
+
+Tree Deserialize(string filePath)
+{
+    BinaryFormatter b = new BinaryFormatter();
+    var fileStream = File.OpenRead(filePath);
+    var tree = (Tree)b.Deserialize(fileStream);
+    fileStream.Close();
+    return tree;
+}
+
+
+if needed, add to PropertyGroup
+<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>

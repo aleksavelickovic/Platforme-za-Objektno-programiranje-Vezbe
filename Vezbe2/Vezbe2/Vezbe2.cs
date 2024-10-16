@@ -47,6 +47,8 @@ namespace Vezbe
 
         public static void zadatak6()
         {
+            /* S obzirom da materijal za 6ti zadatak nije radio, profesor je umesto njega zadao nadogradnju na Z5a,
+            a to je da se rekurzijom pronadje najmanji broj deljiv sa 7 u sortiranom nizu brojeva */
             Random random = new Random();
             Console.WriteLine("Unesite broj nasumicnih brojeva: ");
             int unos = int.Parse(Console.ReadLine());

@@ -16,7 +16,7 @@ internal class Program
         ArrayList lista = new ArrayList();
         lista.Add("a");
         lista.Add("b");
-        foreach(string slovo in lista)
+        foreach (string slovo in lista)
         {
             Console.Write(slovo + ",");
         }
@@ -29,7 +29,7 @@ internal class Program
         int broj = int.Parse(Console.ReadLine());
         int pin = int.Parse(Console.ReadLine());
         int brojac = 0;
-        for (int i = 0; i<bankomat.kartice.Count; i++)
+        for (int i = 0; i < bankomat.kartice.Count; i++)
         {
             if (bankomat.kartice[i].pin.Equals(pin) && bankomat.kartice[i].broj.Equals(broj))
             {
@@ -45,6 +45,6 @@ internal class Program
             }
             brojac++;
         }
-        
+
     }
 }

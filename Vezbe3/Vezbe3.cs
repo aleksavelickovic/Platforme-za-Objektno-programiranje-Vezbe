@@ -26,24 +26,16 @@ internal class Program
         Bankomat bankomat = new Bankomat(kartice, new ArrayList(), 100000);
         bankomat.kartice.Add(new Kartica("123", "321", 10000, "Aleksa", "Velickovic"));
         Console.WriteLine("Molimo Vas ulogujte se: ");
-        int broj = int.Parse(Console.ReadLine());
-        int pin = int.Parse(Console.ReadLine());
-        int brojac = 0;
-        for (int i = 0; i < bankomat.kartice.Count; i++)
+        String broj = Console.ReadLine();
+        String pin = Console.ReadLine();
+        int izbor = int.Parse(Console.ReadLine());
+        if (bankomat.UlogujSe(broj, pin))
         {
-            if (bankomat.kartice[i].pin.Equals(pin) && bankomat.kartice[i].broj.Equals(broj))
-            {
-                Console.WriteLine("Dobrodosli na bankomat, izaberite opciju 1-3: ");
-                Kartica ulogovan = (Kartica)bankomat.kartice[i];
-                Console.WriteLine("Ulogovani ste kao: " + ulogovan.ime + " " + ulogovan.prezime);
-                int izbor = int.Parse(Console.ReadLine());
-                bankomat.inicijalizujBankomat(izbor, ulogovan);
-            }
-            else
-            {
-                Console.WriteLine("TESTTESTTEST");
-            }
-            brojac++;
+            bankomat.inicijalizujBankomat(izbor, bankomat.kartice[0]); //TODO trenutno hardcode-ovano
+        }
+        else
+        {
+            Console.WriteLine("Neuspesan Login!");
         }
 
     }

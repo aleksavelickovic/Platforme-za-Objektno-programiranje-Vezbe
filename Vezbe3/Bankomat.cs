@@ -16,14 +16,14 @@ namespace Vezbe3
         public Bankomat(List<Kartica> kartice, ArrayList transakcije, int novac)
         {
             this.kartice = kartice;
-            kartice.Add(new Kartica()
-            {
-                broj = "123",
-                pin = "321",
-                novac = 10000,
-                ime = "Aleksa",
-                prezime = "Velickovic"
-            }); 
+            //kartice.Add(new Kartica()
+            //{
+            //    broj = "123",
+            //    pin = "321",
+            //    novac = 10000,
+            //    ime = "Aleksa",
+            //    prezime = "Velickovic"
+            //}); 
             this.transakcije = transakcije;
             this.novac = novac;
         }
@@ -62,12 +62,30 @@ namespace Vezbe3
                     break;
             }
         }
+
+        public bool UlogujSe(string broj, string pin)
+        {
+            bool ulogovan = false;
+
+            for (int i = 0; i < this.kartice.Count; i++)
+            {
+                if (this.kartice[i].broj == broj && this.kartice[i].pin == pin)
+                {
+                    ulogovan = true;
+                }
+            }
+
+            return ulogovan;
+        }
+
         private void ispisiTransakcije()
         {
             Console.WriteLine("ZA DEBAGOVANJE sve transakcije: ");
+            int brojac = 1;
             foreach (Transakcija transakcija in this.transakcije)
             {
-                Console.WriteLine("Transakcija");
+                Console.WriteLine("TRANSAKCIJA BROJ: " + brojac + ">>>" + transakcija);
+                brojac++;
             }
         }
     }

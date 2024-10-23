@@ -57,7 +57,7 @@ namespace Vezbe3
                     ulogovan.novac -= novac;
                     Transakcija transakcija1 = new Transakcija(tipTransakcije.ISPLATA, novac, ulogovan);
                     this.transakcije.Add(transakcija1);
-                    Console.WriteLine("Podigli ste novac! Novo stanje na vasem racunu iznosi:" + ulogovan.novac);
+                    Console.WriteLine("Podigli ste novac! Novo stanje na vasem racunu iznosi: " + ulogovan.novac);
                     ispisiTransakcije();
                     break;
             }

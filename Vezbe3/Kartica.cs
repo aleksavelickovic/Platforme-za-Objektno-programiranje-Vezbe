@@ -9,16 +9,16 @@ namespace Vezbe3
     internal class Kartica
     {
         public String broj { get; set; }
-        public String pin { get; set; }
+        public String? pin { get; set; }
         public int novac { get; set; }
         public String ime { get; set; }
         public String prezime { get; set; }
 
 
-        public Kartica(string broj, string pin, int novac, string ime, string prezime)
+        public Kartica(string broj, string pinn, int novac, string ime, string prezime)
         {
             this.broj = broj;
-            this.pin = pin;
+            this.pin = pinn;
             this.novac = novac;
             this.ime = ime;
             this.prezime = prezime;
@@ -40,7 +40,7 @@ namespace Vezbe3
 
         public override string? ToString()
         {
-            return "BrojKartice: " + this.broj;
+            return "BrojKartice: " + this.broj + " Vlasnik: " + this.ime + " " + this.prezime;
         }
     }
 

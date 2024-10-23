@@ -29,15 +29,19 @@ internal class Program
         int broj = int.Parse(Console.ReadLine());
         int pin = int.Parse(Console.ReadLine());
         int brojac = 0;
-        foreach (Kartica kartica in bankomat.kartice)
+        for (int i = 0; i<bankomat.kartice.Count; i++)
         {
-            if (kartica.pin.Equals(pin) && kartica.broj.Equals(broj))
+            if (bankomat.kartice[i].pin.Equals(pin) && bankomat.kartice[i].broj.Equals(broj))
             {
                 Console.WriteLine("Dobrodosli na bankomat, izaberite opciju 1-3: ");
-                Kartica ulogovan = (Kartica)bankomat.kartice[brojac];
+                Kartica ulogovan = (Kartica)bankomat.kartice[i];
                 Console.WriteLine("Ulogovani ste kao: " + ulogovan.ime + " " + ulogovan.prezime);
                 int izbor = int.Parse(Console.ReadLine());
                 bankomat.inicijalizujBankomat(izbor, ulogovan);
+            }
+            else
+            {
+                Console.WriteLine("TESTTESTTEST");
             }
             brojac++;
         }
